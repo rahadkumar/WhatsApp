@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create A New Account</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/eab848cb9a.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../csss/login.css">
+    <link rel="stylesheet" href="../csss/signup.css">
+    <script type="module" src="../jss/login.js" defer async></script>
+</head>
+<body>
+    <form class="signup" novalidate>
+        <h1>Sign Up</h1>
+        <p>Create A New Account</p>
+
+        <div class="inp profile">
+            <input type="file" accept="image/jpeg, image/png, image/jpg" hidden>
+            <img src="../../video/upload.png">
+        </div>
+        <div class="inp">
+            <input type="text" id="name" required>
+            <label for="name">Full Name</label>
+        </div>
+        <div class="inp">
+            <input type="email" id="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="inp">
+            <input type="password" id="crtpassword" required>
+            <label for="crtpassword">Password</label>
+            <i class="seePass fa-solid fa-eye-slash"  data-id="1"></i>
+        </div>
+        <div class="inp">
+            <input type="password" id="confmpass" required>
+            <label for="confmpass">Confirm Your Password</label>
+            <i class="seePass fa-solid fa-eye-slash"  data-id="2"></i>
+        </div>
+        <h3>hi</h3>
+
+        <button>SIGN UP</button>
+
+        <h4 class="noAccount">Already Have An Account? <a href="../../login.html">Login</a></h4>
+    </form>
+</body>
+</html>

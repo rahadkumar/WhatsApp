@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+form {
+    width: min(400px, 80%);
+    background: #f5f5f5;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 20px 25px;
+    position: relative;
+}
+
+form .inp {
+    position: relative;
+    margin-top: 20px;
+}
+
+.inp:not(.eye) input {
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px 10px 0 0;
+    padding-left: 10px;
+    border-bottom: 2px solid #A8A6A7;
+}
+
+.inp input:is(:valid, :focus) + label {
+    top: 0;
+}
+
+.inp :where(span, label) {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #A8A6A7;
+    user-select: none;
+    cursor: text;
+    transition: top 200ms;
+}
+
+.inp span {
+    left: auto;
+    right: 5px;
+    color: #D87234;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 150ms;
+}
+
+.inp span:hover {
+    border-bottom-color: #D87234;
+}
+
+.inp + h3 {
+    color: red;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms;
+}
+
+
+.eye {
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.eye input {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 4px solid #A8A6A7;
+    margin-right: 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition-property: width, height, margin, border, transform;
+    transition-duration: 250ms;
+}
+
+.eye input:checked {
+    width: 25px;
+    height: 15px;
+    margin: 0 10px 10px 5px;
+    border-color: transparent;
+    border-bottom-color: blue;
+    border-left-color: blue;
+    border-top-width: 0;
+    border-right-width: 0;
+    transform: rotate(-45deg);
+}
+
+.eye label {
+    position: static;
+    transform: none;
+    cursor: pointer;
+    color: #000;
+}
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+    transition-property: border, color, background;
+    transition-duration: 200ms;
+}
+
+form button:hover {
+    color: #000;
+    background: #fff;
+    border-color: #000;
+}
+
+.noAccount a {
+    color: #D87234;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border 150ms;
+    user-select: none;
+}
+
+.noAccount a:hover {
+    border-bottom-color: #D87234;
+}
+
+
+
+
+/* loading */
+
+button:disabled,
+button:disabled:hover {
+    opacity: .5;
+    cursor: not-allowed;
+    background: #000;
+    position: relative;
+}
+
+.spin {
+    position: absolute;
+    inset: 0;
+}
+
+.spin::before,
+.spin::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    border: 3px solid transparent;
+    border-radius: 50%;
+}
+
+.spin::before {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    animation: spinning 600ms linear infinite;
+}
+
+.spin::after {
+    border-left-color: #fff;
+    border-right-color: #fff;
+    animation: spinning 600ms 150ms linear infinite;
+}
+
+@keyframes spinning {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    35% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    70% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+}
+
+
+
+
+
+
+
+/* shotcut */
+
+
+.use {
+    position: absolute;
+    top: 45px;
+    right: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    padding: 8px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.use::after {
+    content: "Use Our Shotcut";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .9rem;
+    width: 100px;
+
+}
+
+.use:hover + .shotcut,
+.shotcut:hover {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.shotcut {
+    position: absolute;
+    top: 85px;
+    right: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background: red;
+    z-index: 1;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition-property: transform, opacity;
+    transition-duration: 350ms;
+}
+
+.shotcut li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    user-select: none;
+    list-style: none;
+    border: 1px solid;
+    margin: 4px 0;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.shotcut li p {
+    border: 1px solid;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shotcut li input {
+    border-radius: 5px;
+    padding: 4px 10px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.shotcut li input:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+}

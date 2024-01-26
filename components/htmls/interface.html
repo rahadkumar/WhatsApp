@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/eab848cb9a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../csss/login.css">
+    <link rel="stylesheet" href="../csss/interface.css">
+    <script type="module" src="../jss/interface.js" defer async></script>
+    <script ></script>
+</head>
+<body>
+    <div class="addFriend">
+        <i class="fa-solid fa-x"></i>
+        <input type="email" placeholder="Enter An Email.....">
+        <button>ADD FRIEND</button>
+    </div>
+    <div class="container">
+        <div class="allFriends">
+            <div class="profile">
+                <img>
+                <div class="myName">
+                    <h3></h3>
+                    <p>Online</p>
+                </div>
+                <i class="add fa-solid fa-plus"></i>
+            </div>
+            <div class="search">
+                <input type="search" id="search" required>
+                <label for="search">Search Or Start New Chat</label>
+            </div>
+            <ul class="friendsList">
+            </ul>
+        </div>
+        <div class="allMessages">
+            <div class="load"></div>
+            <div class="message"></div>
+            <div class="sendMessage">
+                <textarea placeholder="Type A Message..."></textarea>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Settings -->
+    <div class="settings">
+        <i class="fa-solid fa-x"></i>
+
+        <button class="signOut">Sign Out</button>
+    </div>
+</body>
+</html>

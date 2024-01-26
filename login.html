@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login With Old Account</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/eab848cb9a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./favicon_io/favicon.ico">
+    <link rel="stylesheet" href="./components/csss/login.css">
+    <script type="module" src="./components/jss/login.js" defer async></script>
+</head>
+<body>
+    <form class="login" novalidate>
+        <i class="use fa-solid fa-right-to-bracket"></i>
+        <div class="shotcut">
+            <li>
+                <p>rahad616210@gmail.com</p>
+                <p>112233</p>
+                <input type="button" value="USE"/>
+            </li>
+            <li>
+                <p>xxx@gmail.com</p>
+                <p>112233</p>
+                <input type="button" value="USE"/>
+            </li>
+        </div>
+
+        <h1>Sign In</h1>
+        <p>Enter Your Email and Password</p>
+
+        <div class="inp">
+            <input type="email" id="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="inp">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+            <span>Forgot Password?</span>
+        </div>
+        <div class="inp eye">
+            <input type="checkbox" id="seePass" class="seePass" data-id="0" required>
+            <label for="seePass">Show Password</label>
+        </div>
+        <h3></h3>
+        <button>LOGIN</button>
+
+        <h4 class="noAccount">Don't Have An Account? <a href="./components/htmls/signup.html">Sign Up</a></h4>
+    </form>
+</body>
+</html>
